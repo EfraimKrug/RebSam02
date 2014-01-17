@@ -1,0 +1,253 @@
+/* Artfully masterminded by ZURB  */
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Page Name 1
+:: Page Name 2
+*/
+
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+body {
+	border: 0px solid black;
+	margin-top: 19px;
+	margin-left: 125px;
+	/* background-color: turquoise; */
+	background-image:url('../img/sky0001.jpg');
+	background-repeat:yes;
+	font-family: "cambria, david";
+	font-size: 14px;
+	z-index: 3;
+	}
+
+#menuLevel1 {
+	display:inline;
+	height: 228px;
+	width: 328px;
+	font-family: "cambria, david";
+	}
+
+#menuButton1 {
+	position:relative;
+	display:inline;
+	border: 4px solid #f5e1c5;
+	width: 228px;
+	border-style:inset;
+	/* background-image:url('../img/DesertSun001.jpg'); */
+	background-image:url('../img/sky0001.jpg');
+	font-family: "cambria, david";
+	text-align:center;
+	color:grey;
+	padding:5px;
+	padding-left:15px;
+	padding-right:15px;
+	margin:3px;
+	font-size: 36px;
+	z-index: 4;
+	}
+	
+ul.menuChoice a	 {
+	font-family: "cambria, david";
+	font-size: 32px;
+	font-weight: normal;
+	color:black;
+	}
+	
+#menuButton1open {
+	position:absolute;
+	display:inline;
+	left: 21px;
+	top:68px;
+	border: 1px solid #f5e1c5;
+	width: 196px;
+	height: 298px;
+	/* background-image:url('../img/DesertPillar01.jpg'); */
+	background-image:url('../img/sky0001.jpg');
+	opacity:1;
+	padding:5px;
+	padding-left:15px;
+	padding-right:15px;
+	z-index:15;
+	}
+
+#menuButton2 {
+	position:relative;
+	display:inline;
+	border: 4px solid #f5e1c5;
+	width: 228px;
+	border-style:inset;
+	/*background-image:url('../img/DesertSun002.jpg');*/
+	background-image:url('../img/sky0001.jpg');
+	font-family: "cambria, david";
+	text-align:center;
+	color:grey;
+	padding:5px;
+	font-size: 36px;
+	}
+
+#menuButton2open {
+	position:absolute;
+	display:inline;
+	left: 163px;
+	top:68px;
+	border: 1px solid #f5e1c5;
+	width: 196px;
+	height: 298px;
+	/*background-image:url('../img/DesertPillar01.jpg');*/
+	background-image:url('../img/sky0001.jpg');
+	opacity:1;
+	padding:5px;
+	padding-left:15px;
+	padding-right:15px;
+	z-index:20;
+	}
+	
+#menuButton3 {
+	position:relative;
+	display:inline;
+	border: 4px solid #f5e1c5;
+	width: 228px;
+	border-style:inset;
+	/*background-image:url('../img/DesertSun003.jpg');*/
+	background-image:url('../img/sky0001.jpg');
+	font-family: "cambria, david";
+	text-align:center;
+	color:grey;
+	padding:5px;
+	font-size: 36px;
+	}
+
+#menuButton3open {
+	position:absolute;
+	display:inline;
+	left: 311px;
+	top:68px;
+	border: 1px solid #f5e1c5;
+	width: 196px;
+	height: 298px;
+	/*background-image:url('../img/DesertPillar01.jpg');*/
+	background-image:url('../img/sky0001.jpg');
+	opacity:1;
+	padding:5px;
+	padding-left:15px;
+	padding-right:15px;
+	z-index:25;
+	}
+
+#menuButton4 {
+	position:relative;
+	display:inline;
+	border: 4px solid #f5e1c5;
+	width: 228px;
+	border-style:inset;
+	/*background-image:url('../img/DesertSun004.jpg');*/
+	background-image:url('../img/sky0001.jpg');
+	font-family: "cambria, david";
+	text-align:center;
+	color:grey;
+	padding:5px;
+	padding-left:15px;
+	padding-right:15px;
+	font-size: 36px;
+	}
+	
+#menuButton4open {
+	position:absolute;
+	display:inline;
+	left: 477px;
+	top:68px;
+	border: 1px solid #f5e1c5;
+	width: 196px;
+	height: 298px;
+	/*background-image:url('../img/DesertPillar01.jpg');*/
+	background-image:url('../img/sky0001.jpg');
+	opacity:1;
+	padding:5px;
+	padding-left:15px;
+	padding-right:15px;
+	z-index:30;
+	}
+
+#menuButton5 {
+	position:relative;
+	display:inline;
+	border: 4px solid #f5e1c5;
+	width: 228px;
+	border-style:inset;
+	/*background-image:url('../img/DesertSun005.jpg');*/
+	background-image:url('../img/sky0001.jpg');
+	font-family: "cambria, david";
+	text-align:center;
+	color:grey;
+	padding:5px;
+	font-size: 36px;
+	}
+
+#menuButton5open {
+	position:absolute;
+	display:inline;
+	left: 623px;
+	top:68px;
+	border: 1px solid #f5e1c5;
+	width: 196px;
+	height: 298px;
+	/*background-image:url('../img/DesertPillar01.jpg');*/
+	background-image:url('../img/sky0001.jpg');
+	opacity:1;
+	padding:5px;
+	padding-left:15px;
+	padding-right:15px;
+	z-index:35;
+	}
+
+.WholeShebang {
+	border: 7px solid #f5e1c5;
+	border-style:outset;
+	width: 998px;
+	height: 1200px;
+	margin-top: 19px;
+	margin-left: 125px;
+	background-image:url('../img/RSisraelDunes0001.jpg');
+	font-family: "cambria, david";
+	font-size: 26px;
+	padding:26px;
+	z-index: 1;
+	}
+
+#ParushToday {
+	font-family: "arial";
+	font-size: 18px;
+	border: 1px solid #f5e1c5;
+	padding: 26px;
+	}
+	
+h2 {
+	font-family: "cambria, david";
+	font-size: 56px;
+	}
+
+hr {
+	border: 1px solid #f5e1c5;
+	color: #f5e1c5;
+	}
+
+p {
+	font-family: "cambria, david";
+	font-size: 18px;
+	}
+/* -----------------------------------------
+   Page Name 1
+----------------------------------------- */
+
+
+
+
+/* -----------------------------------------
+   Page Name 2
+----------------------------------------- */
+
+
