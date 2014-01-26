@@ -1,31 +1,28 @@
 <!DOCTYPE html>
 <html>
-<!--
-PCPLACE varchar(25),
-PCSERVICE varchar(25),
--->
 <body>
 <?php
 $sql = array(
-"INSERT INTO PCSiddurPlace
-(PCPLACE,PCSERVICE)
+"INSERT INTO PCMenu
+(PCMENUNAME,PCLABEL,PCCONNECTION)
 VALUES
-('Shmonei Esrei', 'Shabbos Musaf');",
+('Shacharis', 'Shacharis', 'Shacharis.html');",
 
-"INSERT INTO PCSiddurPlace
-(PCPLACE,PCSERVICE)
+"INSERT INTO PCMenu
+(PCMENUNAME,PCLABEL,PCCONNECTION)
 VALUES
-('Shmonei Esrei', 'Daily');",
+('Shacharis', 'Mincha', 'Mincha.html');",
 
-"INSERT INTO PCSiddurPlace
-(PCPLACE,PCSERVICE)
+"INSERT INTO PCMenu
+(PCMENUNAME,PCLABEL,PCCONNECTION)
 VALUES
-('Shmonei Esrei', 'All');",
+('Shacharis', 'Maariv', 'Maariv.html');",
 
-"INSERT INTO PCSiddurPlace
-(PCPLACE,PCSERVICE)
+"INSERT INTO PCMenu
+(PCMENUNAME,PCLABEL,PCCONNECTION)
 VALUES
-('Psalm 95', 'Kabbalos Shabbos');");
+('Shacharis', 'KabbalatShabbat', 'KabbalatShabbat.html');",
+);
 
 include_once 'DB2.php';
 include 'ENVIRONMENT.php';

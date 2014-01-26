@@ -50,9 +50,9 @@ body {
 	z-index: 4;
 	}
 	
-ul.menuChoice a	 {
+ul.menuChoice 	 {
 	font-family: "cambria, david";
-	font-size: 32px;
+	font-size: 24px;
 	font-weight: normal;
 	color:black;
 	}
@@ -64,7 +64,8 @@ ul.menuChoice a	 {
 	top:68px;
 	border: 1px solid #f5e1c5;
 	width: 196px;
-	height: 298px;
+	/*height: 298px;*/
+	height: 0px;
 	/* background-image:url('../img/DesertPillar01.jpg'); */
 	background-image:url('../img/sky0001.jpg');
 	opacity:1;
@@ -96,7 +97,8 @@ ul.menuChoice a	 {
 	top:68px;
 	border: 1px solid #f5e1c5;
 	width: 196px;
-	height: 298px;
+	/*height: 298px;*/
+	height: 0px;
 	/*background-image:url('../img/DesertPillar01.jpg');*/
 	background-image:url('../img/sky0001.jpg');
 	opacity:1;
@@ -128,7 +130,8 @@ ul.menuChoice a	 {
 	top:68px;
 	border: 1px solid #f5e1c5;
 	width: 196px;
-	height: 298px;
+	/*height: 298px;*/
+	height: 0px;
 	/*background-image:url('../img/DesertPillar01.jpg');*/
 	background-image:url('../img/sky0001.jpg');
 	opacity:1;
@@ -162,7 +165,8 @@ ul.menuChoice a	 {
 	top:68px;
 	border: 1px solid #f5e1c5;
 	width: 196px;
-	height: 298px;
+	/*height: 298px;*/
+	height: 0px;
 	/*background-image:url('../img/DesertPillar01.jpg');*/
 	background-image:url('../img/sky0001.jpg');
 	opacity:1;
@@ -194,7 +198,8 @@ ul.menuChoice a	 {
 	top:68px;
 	border: 1px solid #f5e1c5;
 	width: 196px;
-	height: 298px;
+	/*height: 298px;*/
+	height: 0px;
 	/*background-image:url('../img/DesertPillar01.jpg');*/
 	background-image:url('../img/sky0001.jpg');
 	opacity:1;
@@ -218,11 +223,22 @@ ul.menuChoice a	 {
 	z-index: 1;
 	}
 
-#ParushToday {
+#ParushToday, #ParushYesterday {
 	font-family: "arial";
 	font-size: 18px;
 	border: 1px solid #f5e1c5;
 	padding: 26px;
+	}
+
+#Endorsement, #EndorsementText, #EndorsementName {
+	position:absolute;
+	font-family: "arial";
+	font-size: 12px;
+	border: 1px solid #f5e1c5;
+	padding: 26px;
+	border: 0px solid black;
+	border-style: inset;
+	z-index: 150;
 	}
 	
 h2 {

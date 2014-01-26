@@ -1,0 +1,75 @@
+/***
+ * menuTiles.css
+ **/
+ 
+#jqxMenu {
+		position:absolute;
+		width: 600px;
+		height: 30px;
+		border: 2px solid red;
+		top: 26px;
+		left: 7px;
+		}
+		
+#menu {
+	position:absolute;
+	display:inline;
+	border: 2px solid black;
+	height: 38px;
+	width: 565px;
+	padding: 10px;
+	}
+	
+#menu01, #menu02, #menu03 {
+	position:absolute;
+	display:inline;
+	border: 0px solid red;
+	height: 38px;
+	width: 165px;
+	text-align:center;
+	padding:5px;
+	}
+
+#menu01 {
+	left: 10px;
+	}
+
+#menu02 {
+	left: 210px;
+	}
+
+#menu03 {
+	left: 410px;
+	}
+
+#menu01Button, #menu02Button, #menu03Button {
+	position:relative;
+	display:inline;
+	border: 0px solid blue;
+	font-family: "comic ms";
+	font-size: 29px;
+	text-align:center;
+	height: 58px;
+	width: 95px;
+	padding: 5px;
+	}
+	
+.menuColumn {
+	position: relative;
+	border: 2px solid green;
+	height: 248px;
+	width:185px;
+	}
+
+.menuEntry1, .menuEntry2, .menuEntry3 {
+	color: red;
+	}
+
+.menuEntry11, .menuEntry22, .menuEntry33 {
+	color: blue;
+	}
+
+.menuSubButton {
+	color:green;
+	}
+	

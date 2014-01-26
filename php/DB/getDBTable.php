@@ -31,6 +31,12 @@ if($date != ""){
 	$dbObject->getTableByDate($table);
 	}
 else {
+	if($key > 0){
+		$dbObject->dumpTable($table);
+		}
+	}
+if($table == "PCEndorsement"){
 	$dbObject->dumpTable($table);
 	}
+		
 echo $dbObject->getResultSet();

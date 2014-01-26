@@ -18,19 +18,20 @@
   
   <!-- Included CSS Files (Compressed) -->
   <link rel="stylesheet" href="../css/foundation.min.css">
-  <link rel="stylesheet" href="../css/app.css">
+  <link rel="stylesheet" href="../css/app.css?v=1.2">
 
   <script src="../js/modernizr.foundation.js"></script>
 </head>
 <body>
-<div class="WholeShebang">
+
+<div class="WholeShebang" id="WholeShebang">
 
 
   <div class="row">
     <div class="twelve columns">
       <h2>Life of Kavanah</h2>
       <!-- <p>This is version <strong>3.2.5</strong> generated on January 26, 2013.</p> -->
-      <hr />
+      <!-- <hr /> -->
     </div>
   </div>
 
@@ -41,6 +42,7 @@
 			<div id="menuLevel1">
 				<div id="menuButton1">Siddur</div>
 				<div id="menuButton1open">
+				<!--
 					<ul>
 					<ul class="menuChoice"><a href="#">Siddur 1</a>
 					<ul class="menuChoice"><a href="#">Choice 2</a>
@@ -48,9 +50,11 @@
 					<ul class="menuChoice"><a href="#">Choice 4</a>
 					<ul class="menuChoice"><a href="#">Choice 5</a>
 					</ul>
+				-->
 				</div>
 				<div id="menuButton2">Kavanah</div>
-				<div id="menuButton2open">
+				<div id="menuButton2open" class="menuButton">
+				<!--
 					<ul>
 					<ul>
 					<ul class="menuChoice"><a href="#">Kavanah 1</a>
@@ -60,9 +64,11 @@
 					<ul class="menuChoice"><a href="#">Choice 5</a>
 					</ul>
 					</ul>
+				-->
 				</div>
 				<div id="menuButton3">Baruch H'</div>
-				<div id="menuButton3open">
+				<div id="menuButton3open" class="menuButton">
+				<!--
 					<ul>
 					<ul class="menuChoice"><a href="#">B"H</a>
 					<ul class="menuChoice"><a href="#">Choice 2</a>
@@ -70,9 +76,11 @@
 					<ul class="menuChoice"><a href="#">Choice 4</a>
 					<ul class="menuChoice"><a href="#">Choice 5</a>
 					</ul>
+				-->
 				</div>
 				<div id="menuButton4">Donate</div>
-				<div id="menuButton4open">
+				<div id="menuButton4open" class="menuButton">
+				<!--
 					<ul>
 					<ul class="menuChoice"><a href="#">Donate 1</a>
 					<ul class="menuChoice"><a href="#">Choice 2</a>
@@ -80,35 +88,54 @@
 					<ul class="menuChoice"><a href="#">Choice 4</a>
 					<ul class="menuChoice"><a href="#">Choice 5</a>
 					</ul>
+				-->
 				</div>
 	
 				<div id="menuButton5">About us</div>
-				<div id="menuButton5open">
+				<div id="menuButton5open" class="menuButton">
+					<!--
 					<ul>
-					<ul class="menuChoice"><a href="#">About Us 1</a>
-					<ul class="menuChoice"><a href="#">Choice 2</a>
-					<ul class="menuChoice"><a href="#">Choice 3</a>
+					<ul class="menuChoice"><a href="#">$In Praise</a>
+					<ul class="menuChoice"><a href="#">$Reb Sam</a>
+					<ul class="menuChoice"><a href="#">Irma</a>
 					<ul class="menuChoice"><a href="#">Choice 4</a>
 					<ul class="menuChoice"><a href="#">Choice 5</a>
 					</ul>
+					-->
 				</div>
 			
 			</div>
-		<hr />
+		<!-- <hr /> -->
 		</p>
     </div>
   </div>
 
   <div class="row">
     <div class="eight columns">
-      <h3>Kavanah posted today</h3>
-
-      <!-- Grid Example -->
-      <div class="row">
+      <div class="row" id="PostToday">
+	  <h3>Kavanah posted today</h3>
         <div class="twelve columns">
             <div id="ParushToday">&nbsp;</div>
         </div>
+	  </div>
+
+      <div class="row" id="PostYesterday">
+      <h3>Kavanah posted yesterday</h3>
+        <div class="twelve columns">
+            <div id="ParushYesterday">&nbsp;</div>
+        </div>
       </div>
+
+      <div id="_Endorsement">
+	  <!--
+        <div class="twelve columns">
+            <div id="EndorsementText">&nbsp;</div>
+			<div id="EndorsementName">&nbsp;</div>
+        </div>
+		-->
+      </div>
+	  <div id='AudioPlace'>
+	  </div>
 	<!--
       <div class="row">
         <div class="six columns">
@@ -178,6 +205,9 @@
       <p>Kavanah is everything. The revival of kavanah is the revival of the world…
 		Every act that perfects the world is embraced in it.
 		<br><font size=-1>Rabbi Abraham Isaac Kook</font></p>
+		
+	  <p><div id="ParushDate"></div></p>
+	  <p><div id="SourceAuthor"></div></p>
 <!--
       <h4>Other Resources</h4>
       <p>Once you've exhausted the fun in this document, you should check out:</p>
@@ -202,7 +232,7 @@
   </div>
   
 -->  
-  
+<!--  
   <div class="row">
     <div class="twelve columns">
       <h3>Reveal</h3>
@@ -220,7 +250,7 @@
     <a class="close-reveal-modal">×</a>
   </div>
   
-
+-->
 </div><!-- end WholeShebang -->
 <!----------------- NO HTML AFTER THIS POINT... NONE! ---------------->  
   <!-- Included JS Files (Uncompressed) -->
@@ -254,58 +284,74 @@
 		hideMenu();
 	  //$("#menuButton1open").hide();
 	  $("#menuButton1").click(function(){
-			if(MenuStatus[0] === true){
-				hideMenu();
-				}
-			else {
-				hideMenu();
-				$("#menuButton1open").show();
-				MenuStatus[0] = true;
-				}
+			var dataRouter = new DataRouter();
+			dataRouter.displayMenu(1);
+
+			//$("#ParushExtension").html("YUP");
+			//if(MenuStatus[0] === true){
+			//	hideMenu();
+			//	}
+			//else {
+			//	hideMenu();
+			//	$("#menuButton1open").show();
+			//	MenuStatus[0] = true;
+			//	}
 			});
 	  //$("#menuButton2open").hide();
 	  $("#menuButton2").click(function(){
-			if(MenuStatus[1] === true){
-				hideMenu();
-				}
-			else {
-				hideMenu();
-				$("#menuButton2open").show();
-				MenuStatus[1] = true;
-				}
+			var dataRouter = new DataRouter();
+			dataRouter.displayMenu(2);
+
+		//	if(MenuStatus[1] === true){
+		//		hideMenu();
+		//		}
+		//	else {
+		//		hideMenu();
+		//		$("#menuButton2open").show();
+		//		MenuStatus[1] = true;
+		//		}
 			});			
 	  //$("#menuButton3open").hide();
 	  $("#menuButton3").click(function(){
-			if(MenuStatus[2] === true){
-				hideMenu();
-				}
-			else {
-				hideMenu();
-				$("#menuButton3open").show();
-				MenuStatus[2] = true;
-				}
+			var dataRouter = new DataRouter();
+			dataRouter.displayMenu(3);
+
+	//		if(MenuStatus[2] === true){
+	//			hideMenu();
+	//			}
+	//		else {
+	//			hideMenu();
+	//			$("#menuButton3open").show();
+	//			MenuStatus[2] = true;
+	//			}
 			});			
 	  //$("#menuButton4open").hide();
 	  $("#menuButton4").click(function(){
-			if(MenuStatus[3] === true){
-				hideMenu();
-				}
-			else {
-				hideMenu();
-				$("#menuButton4open").show();
-				MenuStatus[3] = true;
-				}
+			var dataRouter = new DataRouter();
+			dataRouter.displayMenu(4);
+
+	//  if(MenuStatus[3] === true){
+	//			hideMenu();
+	//			}
+	//		else {
+	//			hideMenu();
+	//			$("#menuButton4open").show();
+	//			MenuStatus[3] = true;
+	//			}
 			});			
 	  //$("#menuButton5open").hide();
 	  $("#menuButton5").click(function(){
-			if(MenuStatus[4] === true){
-				hideMenu();
-				}
-			else {
-				hideMenu();
-				$("#menuButton5open").show();
-				MenuStatus[4] = true;
-				}
+			var dataRouter = new DataRouter();
+			dataRouter.displayMenu(5);
+
+			//if(MenuStatus[4] === true){
+			//	hideMenu();
+			//	}
+			//else {
+			//	hideMenu();
+			//	$("#menuButton5open").show();
+			//	MenuStatus[4] = true;
+			//	}
 			});			
 
     });
@@ -318,12 +364,39 @@
     </script>
     <script type="text/template" id="UserTemplate">
 		<clickUser><%= PCTITLE %> <%= PCFNAME %> <%= PCLNAME %> </clickUser>
-		<%= PCEMAIL %> <%= PCPHONE %>
+		<%= PCEMAIL %>
+		<%= PCPHONE %>
     </script>
 	-->
     <script type="text/template" id="ParushTemplate">
-        <clickParush><p><%= PCPARUSH %></p><p><font size=-1>Click for more...</font></p></clickParush>
+        <clickParush><p><%= PCTEASE %>...</p><p><font size=-1>Click for more...</font></p>
+		<div id="ParushExtension"></div>
+		</clickParush>
     </script>
+    <script type="text/template" id="ParushTemplate2">
+        <p><font color=blue size=+2><%= PCPARUSH %></font></p>
+		<audio controls>
+			<source src="../audio/<%= PCAUDIO %>" type="audio/mpeg">
+			Your browser does not support this audio format.
+		</audio>		
+    </script>
+    <script type="text/template" id="DateTemplate">
+        <p><%= PCSUBMITDATE %></p>
+    </script>
+    <script type="text/template" id="SourceAuthorTemplate">
+        <p><%= PCTITLE %> <%= PCFNAME %> <%= PCLNAME %><br>Of <%= PCTOWN %><br><%= PCSEFER %></p>
+    </script>
+    <script type="text/template" id="EmptyTemplate">
+        <p>&nbsp;</p>
+    </script>
+    <script type="text/template" id="MenuTemplate">
+        <clickChoice><ul class="menuChoice"><%= PCLABEL %> </ul></clickChoice>
+    </script>
+    <script type="text/template" id="EndorsementTemplate">
+        <p><%= PCENDORSEMENT %> <br><i><%= PCNAME %></i></p>
+    </script>
+
+
 	<!--
     <script type="text/template" id="TextTemplate">
         <clickText><div id='TTtext' class='he' style='clear:both'><font face='Ezra Sil'><%= PCTEXT %></font></div></clickText><br>
@@ -348,16 +421,21 @@
 		<clickMenu>MENU2: <%= PCLABEL %></clickMenu>
     </script>
 	-->
+
 </body>
-	
+<div id="Endorsement">
+	<div id="EndorsementTitle"></div>
+	<div id="EndorsementBody"></div>
+</div>	
     <!-- Backbone -->
-	<script src="../js/pearlModel.js"></script>
-	<script src="../js/pearlView.js"></script>
-	<script src="../js/pearlRouter.js"></script>
+	<script src="../js/pearlModel.js?v=1.1"></script>
+	<script src="../js/pearlView.js?v=1.1"></script>
+	<script src="../js/pearlRouter.js?v=1.1"></script>
 
 <script>
 var dataRouter = new DataRouter();
 dataRouter.displayParush();
+dataRouter.displayPreviousParush();
 Backbone.history.start();
 </script>
 

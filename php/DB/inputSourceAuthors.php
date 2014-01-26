@@ -1,31 +1,20 @@
 <!DOCTYPE html>
 <html>
-<!--
-PCPLACE varchar(25),
-PCSERVICE varchar(25),
--->
 <body>
+
 <?php
 $sql = array(
-"INSERT INTO PCSiddurPlace
-(PCPLACE,PCSERVICE)
+"INSERT INTO PCSourceAuthor
+(PCTITLE,PCFNAME,PCLNAME,PCTOWN,PCSEFER)
 VALUES
-('Shmonei Esrei', 'Shabbos Musaf');",
+('Rebbe', 'Shneur Zalman', '', 'Liadi', 'Tanya');",
 
-"INSERT INTO PCSiddurPlace
-(PCPLACE,PCSERVICE)
+"INSERT INTO PCSourceAuthor
+(PCTITLE,PCFNAME,PCLNAME,PCTOWN,PCSEFER)
 VALUES
-('Shmonei Esrei', 'Daily');",
+('Rebbe', 'Levi Yitzchak', '', 'Berditchev', 'Kiddushas Levi');"
 
-"INSERT INTO PCSiddurPlace
-(PCPLACE,PCSERVICE)
-VALUES
-('Shmonei Esrei', 'All');",
-
-"INSERT INTO PCSiddurPlace
-(PCPLACE,PCSERVICE)
-VALUES
-('Psalm 95', 'Kabbalos Shabbos');");
+);
 
 include_once 'DB2.php';
 include 'ENVIRONMENT.php';

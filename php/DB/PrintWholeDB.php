@@ -25,6 +25,12 @@ $dbObject = DBFactory::getFactory()->getDB(ENVIRONMENT);
 $dbObject->dumpTable("PCAuthor");
 dumpTable($dbObject, "PCAuthor");
 
+echo "<br>================ D U M P I N G === T H E ===  <U>SOURCE A U T H O R</U> T A B L E  ==========================<br>";
+$dbObject = DBFactory::getFactory()->getDB(ENVIRONMENT);
+$dbObject->dumpTable("PCSourceAuthor");
+dumpTable($dbObject, "PCSourceAuthor");
+
+
 echo "<br>================ D U M P I N G === T H E ===  <U>U S E R </U> T A B L E  ==========================<br>";
 $dbObject = DBFactory::getFactory()->getDB(ENVIRONMENT);
 $dbObject->dumpTable("PCUser");
@@ -44,6 +50,11 @@ echo "<br>================ D U M P I N G === T H E ===  <U>P A R U S H </U> T A 
 $dbObject = DBFactory::getFactory()->getDB(ENVIRONMENT);
 $dbObject->dumpTable("PCParush");
 dumpTable($dbObject, "PCParush");
+
+echo "<br>================ D U M P I N G === T H E ===  <U>M E N U </U> T A B L E  ==========================<br>";
+$dbObject = DBFactory::getFactory()->getDB(ENVIRONMENT);
+$dbObject->dumpTable("PCMenu");
+dumpTable($dbObject, "PCMenu");
 
 $dbObject->DBClose();
 ?>

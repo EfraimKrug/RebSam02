@@ -220,8 +220,14 @@ class DBAccess implements DBInterface
 		{
 		$date = $this->getDate();
 		if($date > 0){
-			$sql = "SELECT * FROM $table WHERE " . $tableNames[$table] . " = '" . $date . "';";
+			if($table == "PCParush"){
+				$sql = "SELECT * FROM PCParush LEFT JOIN PCText ON PCText.PCTEXTID = PCParush.PCTEXTID WHERE ";
+				$sql .= $tableNames[$table] . " = '" . $date . "';";
+				}
+			else {
+				$sql = "SELECT * FROM $table WHERE " . $tableNames[$table] . " = '" . $date . "';";
 			}
+		}
 		else {
 			$sql = "SELECT * FROM $table";
 			}
@@ -261,16 +267,16 @@ class DBAccess implements DBInterface
 	public function dumpTable($table)
 	{
 	
-	$tableNames = array("PCAuthor" => "PCAUTHORID", "PCUser" => "PCUSERID", "PCText" => "PCTEXTID", "PCParush" => "PCPARUSHID", "PCMenu" => "PCMENUID", "PCSiddurPlace" => "PCSIDDURPLACEID", "PCSourceAuthor" => "PCSOURCEAUTHORID"); 
+	$tableNames = array("PCAuthor" => "PCAUTHORID", "PCUser" => "PCUSERID", "PCText" => "PCTEXTID", "PCParush" => "PCPARUSHID", "PCMenu" => "PCMENUID", "PCSiddurPlace" => "PCSIDDURPLACEID", "PCSourceAuthor" => "PCSOURCEAUTHORID", "PCEndorsement" => "PCENDORSEMENTID"); 
 
 	if(array_key_exists($table,$tableNames))
 		{
 		$key = $this->getKey();
-		if($key > 0){
-			$sql = "SELECT * FROM $table WHERE " . $tableNames[$table] . " = " . $key . ";";
+		if($key == 0){
+			$sql = "SELECT * FROM $table";
 			}
 		else {
-			$sql = "SELECT * FROM $table";
+			$sql = "SELECT * FROM $table WHERE " . $tableNames[$table] . " = " . $key . ";";
 			}
 			
 		try 
@@ -297,6 +303,46 @@ class DBAccess implements DBInterface
 		}
 	$this->setKey(0);
 	$this->LastKey = 0;
+	}
+
+	
+	/*
+	 *  There are a number of tables that have a one-piece primary key
+	 *  dumpTable can select all the records in those tables and hand 
+	 *  them back in a record set.
+	 * 
+	 *  Client is responsible for connected the database before dumping
+	 */
+	public function getMenu($menu)
+	{
+	
+	$menuNames = array("About Us","Donate","Siddur","BaruchH","Kavanah" ); 
+
+	if(in_array($menu,$menuNames))
+		{
+		#if($key == 0){
+			$sql = "SELECT * FROM PCMenu WHERE PCMENUNAME = '" . $menu . "'";
+		#	}
+			
+		try 
+		{
+				$stmt = @$this->getConnection()->query($sql);
+				$messages = $stmt->fetchAll(PDO::FETCH_OBJ);
+				$this->resultSet = json_encode($messages);
+
+		} 
+		catch(PDOException $e)
+			{
+				$this->ErrorMessage = 'Could not get the menu: $menu ';
+				$this->ErrorMessage .= $e->getMessage();
+				$this->Error = 101;
+				echo $e->errorMessage($this->ErrorMessage, $this->Error);
+			}
+		}
+	else {
+		$this->ErrorMessage = "$menu is not a listed menu for the 'dump' routine";
+		$this->Error = 23;
+		}
 	}
 
 

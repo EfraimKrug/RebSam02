@@ -1,0 +1,61 @@
+<html>
+	<head>
+	<title>Evoluted Think Tank - jQuery Accordion Tutorial</title>
+		
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+	<script type="text/javascript" src="js/flippinTile02.js?v=1.2"></script>
+	
+	<link rel="stylesheet" type="text/css" href="FlippinTile.css" />
+
+	<script type="text/javascript">
+			$(document).ready(function(){
+				$('.FlippinTile').click(function(){
+					alert("HELO");
+					$('.FlippinTile').flippinTile("FlippinTileOver");
+					});
+			});
+			
+			$(document).ready(function(){
+				var margin =$("#Rounding").width()/2;
+				var marginH =$("#Rounding").height()/2;
+				var width=$("#Rounding").width();
+				var height=$("#Rounding").height(); 
+					$("#Rounding").click(function(){
+						window.setTimeout(function() {
+								$("#Rounding").stop().animate({	width:'0px',
+											height:''+height+'px',
+											marginLeft:''+margin+'px',
+											opacity:'0.5'},{duration:200});
+											},100);
+
+						window.setTimeout(function() {
+							var x = $("#Rounding").css('background-image');
+							var regexPattern = /MUSH01/i;
+							var result = x.match(regexPattern);
+							if(result == "MUSH01"){
+									$("#Rounding").css('background-image','url(MUSH15.png)');
+									}
+							else {
+									$("#Rounding").css('background-image','url(MUSH01.png)');
+									}
+						},200);
+			
+			
+						window.setTimeout(function() {
+							$("#Rounding").stop().animate({	width:''+width+'px',
+											height:''+height+'px',
+											marginLeft:'0px',
+											opacity:'1'},{duration:200});
+						},300);
+									
+					});
+				});
+	</script>
+	</head>
+	
+	<body>	
+		<div class="FlippinTile">This is my flippin' tile!</div>
+		<div class="FlippinTileOver"></div>
+		<div id="Rounding"></div>
+	</body>
+</html>

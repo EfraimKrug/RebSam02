@@ -1,0 +1,28 @@
+/***
+ * menuTiles.css
+ **/
+ 
+#jqxMenu {
+		position:absolute;
+		display:inline;
+		width: 600px;
+		height: 30px;
+		border: 2px solid red;
+		top: 26px;
+		left: 7px;
+		}
+.menuLI {
+	display:inline;
+	font: comic ms;
+	font-size: 14px;
+	color: blue;
+	border: 2px solid blue;
+	}
+.menuUL {
+	display:inline;
+	font: comic ms;
+	font-size: 18px;
+	color: red;
+	border: 2px solid red;
+	}
+
